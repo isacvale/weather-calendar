@@ -1,0 +1,13 @@
+.MainPage {
+    display: grid;
+    grid-template-areas:
+        'header nav'
+        'bar calendar';
+    grid-template-rows: 4em auto;
+    grid-template-columns: 15em auto;
+    min-height: 100vh;
+}
+
+.MainPage__CalendarContainer > * {
+    min-height: 100%;
+}

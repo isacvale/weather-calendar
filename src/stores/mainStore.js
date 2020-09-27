@@ -6,12 +6,16 @@ const data = {
     selectedYear: 2020,
     reminders: {
         2020: {
-            0: {
-                1: ['mom', 'dad', 'gradma']
-            },
             8: {
-                10: 'mmm'
-            }
+                17: [
+                    {
+                        text: 'Ohana means family.',
+                        city: 'San Francisco',
+                        time: '6:30 PM',
+                        color: 'yellow'
+                    },
+                ]
+            },
         }
     }
 }

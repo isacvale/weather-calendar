@@ -1,0 +1,16 @@
+.CalendarReminder {
+    box-shadow: 0 4px 8px -3px var(--shadow);
+    min-height: 3em;
+    padding: 0.4em 0.8em;
+    line-height: 96%;
+}
+.CalendarReminder__Time,
+.CalendarReminder__City,
+.CalendarReminder__Weather {
+    color: var(--color-lightgray);
+    font-size: 13px;
+}
+
+.CalendarReminder__Text {
+    margin: 0.2em 0;
+}

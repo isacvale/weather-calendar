@@ -4,7 +4,6 @@ import { MainPage } from 'pages'
 function App() {
   return (
     <div className="App">
-      <h1>Weather Calendar</h1>
       <MainPage />
     </div>
   );

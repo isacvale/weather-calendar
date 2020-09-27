@@ -1,0 +1,6 @@
+.CalendarDay {
+    /* border: 1px solid var(--baby-powder); */
+    background: var(--white-transparent);
+    min-height: 4em;
+    padding: 0.4em;
+}
