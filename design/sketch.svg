@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -341,5 +341,86 @@
            x="148.57143"
            y="260"
            style="font-size:18.66666603px" /></flowRegion><flowPara
-         id="flowPara1123">delete all reminders</flowPara></flowRoot>  </g>
+         id="flowPara1123">delete all reminders</flowPara></flowRoot>    <g
+       id="g919"
+       transform="matrix(0.26458333,0,0,0.26458333,205.19068,-13.243099)">
+      <rect
+         id="rect878"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="0"
+         style="fill:#ffadad" />
+      <rect
+         id="rect880"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="55.555557"
+         style="fill:#ffd6a5" />
+      <rect
+         id="rect882"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="111.11111"
+         style="fill:#fdffb6" />
+      <rect
+         id="rect884"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="166.66667"
+         style="fill:#caffbf" />
+      <rect
+         id="rect886"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="222.22223"
+         style="fill:#9bf6ff" />
+      <rect
+         id="rect888"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="277.77777"
+         style="fill:#a0c4ff" />
+      <rect
+         id="rect890"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="333.33334"
+         style="fill:#bdb2ff" />
+      <rect
+         id="rect892"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="388.88889"
+         style="fill:#ffc6ff" />
+      <rect
+         id="rect894"
+         height="220"
+         width="55.555557"
+         y="0"
+         x="444.44446"
+         style="fill:#fffffc" />
+      <text
+         id="text896"
+         alignment-baseline="middle"
+         font-size="6"
+         y="235"
+         x="10"
+         style="font-size:6px;font-family:Arial">Exported from Coolors.co</text>
+      <text
+         id="text898"
+         alignment-baseline="middle"
+         font-size="6"
+         y="235"
+         x="490"
+         style="font-size:6px;font-family:Arial;text-anchor:end">https://coolors.co/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff-fffffc</text>
+    </g>
+  </g>
 </svg>
