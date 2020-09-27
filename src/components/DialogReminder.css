@@ -1,0 +1,110 @@
+.DialogReminder {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1rem 3rem -2rem black;
+    text-align: center;
+}
+
+.DialogReminder__Form {
+    padding: 2rem;
+    max-width: 22rem;
+}
+
+.DialogReminder > footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 0.8rem;
+}
+
+.DialogReminder__Date {
+    font-size: 1.4rem;
+    font-variation-settings: 'wght' 600;
+    padding: 0.6rem 0;
+}
+
+.DialogReminder__WeekDay {
+    /* font-variation-settings: 'wght' 500; */
+    color: var(--color-lightgray);
+    /* margin-top: -0.3rem; */
+}
+
+.DialogReminder__Date-Button {
+    display: inline-block;
+    margin: 0;
+}
+
+.DialogReminder__Time-Edit {
+
+}
+
+.DialogReminder__Message,
+.DialogReminder__City,
+.DialogReminder_Weather,
+.DialogReminder_Color-Picker-Label {
+    display: block;
+    margin-top: 1rem;
+}
+
+.DialogReminder__Time-Edit,
+.DialogReminder__Message > .__Input,
+.DialogReminder__City > .__Input {
+    background: var(--white-transparent);
+    box-sizing: border-box;
+    border: 2px solid var(--black-transparent-LL);
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+}
+
+.DialogReminder__Message > .__Input {
+    resize: vertical;
+}
+
+
+.DialogReminder__Letter-Count,
+.DialogReminder_Weather-Subheading {
+    color: var(--color-lightgray);
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-variation-settings: 'wght' 450;
+}
+
+.DialogReminder_Weather {
+    font-size: 1.2rem;
+    font-variation-settings: 'wght' 500;
+}
+
+.DialogReminder__ColorPicker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+
+.DialogReminder__Color-Button {
+    flex: 1 0;
+    cursor: pointer;
+    height: 2rem;
+    box-sizing: border-box;
+    border: 3px solid var(--shadow);
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 700;
+    color: var(--black-transparent-L);
+}
+
+.DialogReminder__Color-Button.--selected {
+    color: var(--black-transparent);
+    border: 3px solid var(--black-transparent);
+    transform: scale(1.1);
+}
+
+.DialogCloseButton {
+    background: var(--shadow);
+    border: none;
+    cursor: pointer;
+    height: 3rem;
+    border-radius: 3rem;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-variation-settings: 'wght' 500;
+    min-width: 10em;
+}

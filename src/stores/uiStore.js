@@ -2,7 +2,7 @@ import { action, observable } from 'mobx'
 
 // Data structure
 const data = {
-
+    modalDialog: null,
 }
 
 // Store creation

@@ -4,11 +4,27 @@
     padding: 0.4em 0.8em;
     line-height: 96%;
 }
+
+.CalendarReminder > header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.CalendarReminder__Edit-Button {
+    color: var(--maximum-blue-purple);
+    font-size: 0.9rem;
+}
+
 .CalendarReminder__Time,
 .CalendarReminder__City,
 .CalendarReminder__Weather {
     color: var(--color-lightgray);
     font-size: 13px;
+}
+
+.CalendarReminder__Time {
+    min-width: max-content;
 }
 
 .CalendarReminder__Text {

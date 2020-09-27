@@ -2,12 +2,19 @@
 
 body {
   margin: 0;
+  /* font-variation-settings: 'wght'; */
+}
+
+body,
+button,
+.link-button,
+.DialogReminder__Time-Edit,
+.__Input {
   font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* font-variation-settings: 'wght'; */
 }
 
 code {
@@ -15,12 +22,16 @@ code {
     monospace;
 }
 
-{/* Color declarations*/}
+/* Color declarations*/
 :root {
-  --color-lightgray: hsl(0, 0%, 60%);
+  --color-lightgray: hsl(0, 0%, 50%);
   --black-transparent: hsl(0, 0%, 0%, 0.7);
+  --black-transparent-L: hsl(0, 0%, 0%, 0.4);
+  --black-transparent-LL: hsl(0, 0%, 0%, 0.22);
   --white-transparent: hsla(0, 0%, 100%, 0.7);
-  --white-transparent-l: hsla(0, 0%, 100%, 0.5);
+  --white-transparent-a: hsla(0, 0%, 100%, 0.6);
+  --grey-transparent: hsl(0, 0%, 0%, 0.4);
+  --grey-transparent-L: hsl(0, 0%, 0%, 0.2);
   --shadow: hsla(0, 0%, 0%, 0.1);
 
   --light-pink: hsla(0, 100%, 84%, 1);
@@ -31,6 +42,24 @@ code {
   --celeste-L: hsla(185, 100%, 92%, 1);
   --baby-blue-eyes: hsla(217, 100%, 81%, 1);
   --maximum-blue-purple: hsla(249, 100%, 85%, 1);
+  --maximum-blue-purple-sl: hsla(249, 30%, 45%, 1);
   --mauve: hsla(300, 100%, 89%, 1);
   --baby-powder: hsla(60, 100%, 99%, 1);
+}
+
+/* Universal templates */
+
+.link-button {
+  background-color: transparent;
+  border: none;
+  color: var(--maximum-blue-purple-sl);
+  cursor: pointer;
+  font-size: 1rem;
+  font-variation-settings: 'wght' 500;
+}
+
+.__Label {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }

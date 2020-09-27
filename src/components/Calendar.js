@@ -1,4 +1,5 @@
 import React from 'react'
+import { observer } from 'mobx-react'
 import {
   daysInMonth,
   extendDaysList,
@@ -16,7 +17,7 @@ const Calendar = props => {
 
   return (
     <section
-      class='Calendar'
+      className='Calendar'
     >
       <CalendarHeader />
       <div className='Calendar__daysContainer'>
@@ -45,7 +46,7 @@ const CalendarHeader = props => {
   return(
     <div className='CalendarHeader'>
       { daysOfTheWeek.map(day =>
-        <div className='CalendarHeader__Label'>{day}</div>
+        <div key={day} className='CalendarHeader__Label'>{day}</div>
       )}
     </div>
   )
