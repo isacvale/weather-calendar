@@ -1,6 +1,8 @@
 import React from 'react'
 import {
     Calendar,
+    Header,
+    Navigation,
     SideBar,
 } from 'components'
 import './MainPage.css'
@@ -8,8 +10,12 @@ import './MainPage.css'
 const MainPage = props => {
     return (
         <div className='MainPage'>
-            <div style={{ gridArea: 'header' }}>Weather Calendar</div>
-            <div style={{ gridArea: 'nav' }}>Nav</div>
+            <div style={{ gridArea: 'header' }}>
+                <Header />
+            </div>
+            <div style={{ gridArea: 'nav' }}>
+                <Navigation />
+            </div>
             <div style={{ gridArea: 'bar' }}>
                 <SideBar />
             </div>

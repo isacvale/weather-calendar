@@ -2,7 +2,9 @@ import Calendar from './Calendar'
 import CalendarDay from './CalendarDay'
 import CalendarReminder from './CalendarReminder'
 import DialogReminder from './DialogReminder'
+import Header from './Header'
 import Modal from './Modal'
+import Navigation from './Navigation'
 import SideBar from './SideBar'
 
 export {
@@ -10,6 +12,8 @@ export {
     CalendarDay,
     CalendarReminder,
     DialogReminder,
+    Header,
     Modal,
+    Navigation,
     SideBar,
 }

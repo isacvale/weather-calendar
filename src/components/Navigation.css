@@ -1,0 +1,26 @@
+.Navigation {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.Navigation__Year-Button,
+.Navigation__Month-Button {
+    line-height: 1.1;
+}
+
+.Navigation__Year-Button {
+    color: var(--tea-green-sl);
+}
+
+.Navigation__Month-Button {
+    color: var(--mauve-sl);
+}
+
+.Navigation__MainTitle {
+    text-align: center;
+    flex-basis: 16em;
+    font-size: 1.4em;
+    font-variation-settings: 'wght' 600;
+}

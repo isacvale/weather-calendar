@@ -43,8 +43,6 @@ const store = observable({
     data,
 
     addReminder (data = {}) {
-        console.log('runs 2')
-
         const {
             dateString = normalString(new Date()),
             id = Math.random(),
@@ -81,11 +79,10 @@ const store = observable({
     },
 
     addRandomReminder () {
-        console.log('runs 1')
         const today = new Date()
         const randomDay = Math.random() * 28
-        const month = today.getMonth()
-        const year = today.getFullYear()
+        const month = this.data.selectedMonth || today.getMonth()
+        const year = this.data.selectedYear || today.getFullYear()
         const randomHour = Math.random() * 24
         const randomMinutes = Math.random() * 60
 
@@ -116,11 +113,42 @@ const store = observable({
     clearDay (year, month, day) {
         this.data.reminders[year][month][day] = []
     },
+
+    minusMonth () {
+        const month = this.data.selectedMonth - 1
+        const year = this.data.selectedYear
+        if (month < 0) {
+            this.data.selectedMonth = 11
+            this.data.selectedYear -= 1
+        } else {
+            this.data.selectedMonth = month
+        }
+    },
+    plusMonth () {
+        const month = this.data.selectedMonth + 1
+        const year = this.data.selectedYear
+        if (month > 11) {
+            this.data.selectedMonth = 0
+            this.data.selectedYear += 1
+        } else {
+            this.data.selectedMonth = month
+        }
+    },
+    minusYear () {
+        this.data.selectedYear -= 1
+    },
+    plusYear () {
+        this.data.selectedYear += 1
+    }
 }, {
     addRandomReminder: action.bound,
     addReminder: action.bound,
     clearDay: action.bound,
     deleteReminder: action.bound,
+    minusMonth: action.bound,
+    minusYear: action.bound,
+    plusMonth: action.bound,
+    plusYear: action.bound,
 })
 
 window.g = {

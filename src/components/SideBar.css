@@ -1,5 +1,9 @@
 .SideBar {
-    padding: 0 1.2em;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1.2em 0;
+    min-height: 90%;
+    /* justify-content: center; */
 }
 
 .SideBar__Random-Button {

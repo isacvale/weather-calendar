@@ -6,12 +6,16 @@ import {
   listDays,
   range
 } from 'utils'
+import { mainStore } from 'stores'
 import { CalendarDay } from 'components'
 import './Calendar.css'
 
-const Calendar = props => {
+const Calendar = observer(props => {
   const today = new Date()
-  const { month = today.getMonth(), year = today.getFullYear()} = props
+  const {
+    month = mainStore.data.selectedMonth || today.getMonth(),
+    year = mainStore.data.selectedYear || today.getFullYear()
+  } = props
 
   const listOfDays = listDays(month, year, true)
 
@@ -37,7 +41,7 @@ const Calendar = props => {
       </div>
     </section>
   )
-}
+})
 
 const CalendarHeader = props => {
   const daysOfTheWeek = [

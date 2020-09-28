@@ -40,12 +40,15 @@ code {
   --deep-champagne: hsla(33, 100%, 82%, 1);
   --lemon-yellow-crayola: hsla(62, 100%, 86%, 1);
   --tea-green: hsla(110, 100%, 87%, 1);
+  --tea-green-sl: hsla(110, 40%, 77%, 1);
+  --tea-green-sll: hsla(110, 57%, 40%, 1);
   --celeste: hsla(185, 100%, 80%, 1);
   --celeste-L: hsla(185, 100%, 92%, 1);
   --baby-blue-eyes: hsla(217, 100%, 81%, 1);
   --maximum-blue-purple: hsla(249, 100%, 85%, 1);
   --maximum-blue-purple-sl: hsla(249, 30%, 45%, 1);
   --mauve: hsla(300, 100%, 89%, 1);
+  --mauve-sl: hsla(300, 30%, 69%, 1);
   --baby-powder: hsla(60, 100%, 99%, 1);
 }
 
