@@ -1,6 +1,8 @@
 import { action, observable } from 'mobx'
 import {
-    normalString
+    colorPalette,
+    getRandomItem,
+    normalString,
 } from 'utils'
 
 // Data structure
@@ -41,6 +43,8 @@ const store = observable({
     data,
 
     addReminder (data = {}) {
+        console.log('runs 2')
+
         const {
             dateString = normalString(new Date()),
             id = Math.random(),
@@ -75,12 +79,47 @@ const store = observable({
 
         return dayArray[dayArray.length - 1]
     },
+
+    addRandomReminder () {
+        console.log('runs 1')
+        const today = new Date()
+        const randomDay = Math.random() * 28
+        const month = today.getMonth()
+        const year = today.getFullYear()
+        const randomHour = Math.random() * 24
+        const randomMinutes = Math.random() * 60
+
+        const randomWords = ['', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod']
+        const getRandomText = () => {
+            const words = []
+            for (let i = 0; i < 5; i++) {
+                words.push(getRandomItem(randomWords))
+            }
+            return words
+                .join(' ')
+                .slice(0, Math.random() * 15 + 15)
+        }
+
+        this.addReminder({
+            dateString: normalString(new Date(year, month, randomDay, randomHour, randomMinutes)),
+            color: getRandomItem(Object.keys(colorPalette)),
+            city: getRandomItem(['Vancouver', 'Edinburgh', 'Houston', 'Paris', 'Dublin', 'Rio de Janeiro', 'Lagos', 'Canberra', 'Kyoto']),
+            text: getRandomText()
+        })
+    },
+
     deleteReminder (year, month, day, id) {
         const monthArray = this.data.reminders[year][month]
         monthArray[day] = monthArray[day].filter(reminder => reminder.id !== id)
     },
+
+    clearDay (year, month, day) {
+        this.data.reminders[year][month][day] = []
+    },
 }, {
+    addRandomReminder: action.bound,
     addReminder: action.bound,
+    clearDay: action.bound,
     deleteReminder: action.bound,
 })
 

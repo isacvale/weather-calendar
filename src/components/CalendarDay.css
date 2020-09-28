@@ -4,3 +4,17 @@
     min-height: 4em;
     padding: 0.4em;
 }
+
+.CalendarDay__NotesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.CalendarDay_Clear-Button {
+    margin-top: 0.5em;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    color: var(--color-danger);
+}

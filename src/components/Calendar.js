@@ -19,8 +19,8 @@ const Calendar = props => {
     <section
       className='Calendar'
     >
-      <CalendarHeader />
       <div className='Calendar__daysContainer'>
+        <CalendarHeader />
         { listOfDays.map((cur, idx) => {
             const { day, month, year, weekDay } = cur
             return (
@@ -44,11 +44,13 @@ const CalendarHeader = props => {
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
   ]
   return(
-    <div className='CalendarHeader'>
+    // <div className='CalendarHeader'>
+    <>
       { daysOfTheWeek.map(day =>
         <div key={day} className='CalendarHeader__Label'>{day}</div>
       )}
-    </div>
+    </>
+    // </div>
   )
 }
 

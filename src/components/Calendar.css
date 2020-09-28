@@ -2,7 +2,6 @@
     background: var(--celeste-L);
 }
 
-.CalendarHeader,
 .Calendar__daysContainer {
     display: grid;
     gap: 0.2em;

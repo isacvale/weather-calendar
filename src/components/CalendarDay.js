@@ -14,19 +14,28 @@ const CalendarDay = observer(props => {
       className='CalendarDay'
     >
       <header>{day}</header>
-      { data.map((cur, idx) =>
-          <CalendarReminder
-            key={cur.id}
-            day={day}
-            month={month}
-            year={year}
-            id={cur.id}
-            city={cur.city}
-            text={cur.text}
-            time={cur.time}
-            color={cur.color}
-          />
-        )
+      <div className='CalendarDay__NotesContainer'>
+        { data.map((cur, idx) =>
+            <CalendarReminder
+              key={cur.id}
+              day={day}
+              month={month}
+              year={year}
+              id={cur.id}
+              city={cur.city}
+              text={cur.text}
+              time={cur.time}
+              color={cur.color}
+            />
+          )
+        }
+      </div>
+      { data.length
+        ? <button
+          className='CalendarDay_Clear-Button link-button'
+          onClick={() => mainStore.clearDay(year, month, day)}
+        >clear</button>
+        : null
       }
     </section>
   )

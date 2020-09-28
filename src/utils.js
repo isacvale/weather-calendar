@@ -75,11 +75,12 @@ const colorPalette = {
 const colorAliasToCSSVar = alias =>
   colorPalette[alias]
 
+
+const addLeadingZero = num => {
+  return ('00' + num).slice(-2)
+}
+
 const normalString = dateArg => {
-  const addLeadingZero = num => {
-    return ('00' + num).slice(-2)
-  }
-    
   
   const date = typeof dateArg === 'string'
     ? new Date(dateArg)
@@ -101,11 +102,15 @@ const getTime = dateArg => {
   return `${time.match(/\d+:\d{2}/)} ${time.match(/[A-Z]{2}/)}`
 }
 
+const getRandomItem = arr =>
+  arr[Math.floor(Math.random() * arr.length)]
+
 export {
   colorAliasToCSSVar,
   colorPalette,
   daysInMonth,
   extendDaysList,
+  getRandomItem,
   getTime,
   getWeekDay,
   listDays,

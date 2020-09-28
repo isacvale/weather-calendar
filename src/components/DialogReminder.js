@@ -63,10 +63,9 @@ const DialogReminder = observer(props => {
       <footer>
         <DialogCloseButton onClose={closeCallback} />
         <button
-          className='link-button'
-          style={{ color: 'red' }}
-          // onClick={}
-        >Or delete this message</button>
+          className='DialogReminder__Delete-Button link-button'
+          onClick={() => mainStore.deleteReminder(year, month, day, id)}
+        >delete</button>
       </footer>
     </section>
   )

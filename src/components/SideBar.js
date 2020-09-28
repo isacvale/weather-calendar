@@ -18,19 +18,7 @@ const SideBar = props => {
   const createNewReminder = () => {
     setReminder(mainStore.addReminder())
   }
-
-  // const closeDialog = () => {
-  //     const newDate = reminder.newDateTime
-  //     if (newDate) {
-  //       mainStore.addReminder({
-  //         ...reminder,
-  //         dateString: reminder.newDateTime,
-  //       })
-  //       mainStore.deleteReminder(year, month, day, id)
-  //     }
-  //     setIsOpen(!isOpen)
-  //   }
-
+  
   const { year, month, day, id } = reminder
 
   return (
@@ -41,6 +29,14 @@ const SideBar = props => {
       >
         Add reminder
       </button>
+
+      <button
+        className='SideBar__Random-Button link-button'
+        onClick={mainStore.addRandomReminder}
+      >
+        Add random example
+      </button>
+
       { reminder
         ? <Modal
           // closeCallback={closeDialog}
