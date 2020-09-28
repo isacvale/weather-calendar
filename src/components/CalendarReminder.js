@@ -7,6 +7,7 @@ import {
 import {
   colorAliasToCSSVar,
   colorPalette,
+  getTime
 } from 'utils'
 import './CalendarReminder.css'
 import { mainStore } from 'stores/index'
@@ -14,17 +15,21 @@ import { mainStore } from 'stores/index'
 const CalendarReminder = observer(props => {
 
   const { city, color, day, id, month, text, time, year } = props
-  const [isOpen, setIsOpen] = useState(false)
 
+  const [isOpen, setIsOpen] = useState(false)
   const reminder = mainStore.data.reminders[year][month][day]
     .find(x => x.id === id)
+
   const cssColor = colorAliasToCSSVar(color) || 'white'
   const toggleIsOpen = () => setIsOpen(!isOpen)
 
   const closeDialog = () => {
     const newDate = reminder.newDateTime
     if (newDate) {
-      mainStore.addReminder(newDate.getFullYear(),newDate.getMonth(), newDate.getDate(), id, reminder)
+      mainStore.addReminder({
+        ...reminder,
+        dateString: reminder.newDateTime,
+      })
       mainStore.deleteReminder(year, month, day, id)
     }
     setIsOpen(!isOpen)
@@ -38,11 +43,9 @@ const CalendarReminder = observer(props => {
       }}
     >
       <header>
-        <div className='CalendarReminder__Time'>{time}</div>
-        <button
-          className='CalendarReminder__Edit-Button link-button'
-          onClick={toggleIsOpen}
-        >edit</button>
+        <div className='CalendarReminder__Time'>
+          {getTime(new Date(reminder.dateString))}
+        </div>
       </header>
       <div
         className='CalendarReminder__Text'
@@ -50,6 +53,12 @@ const CalendarReminder = observer(props => {
       <footer
         className='CalendarReminder__City'
       >{city}</footer>
+
+      <button
+        className='CalendarReminder__Edit-Button link-button'
+        onClick={toggleIsOpen}
+      >edit</button>
+
       <Modal
         closeCallback={closeDialog}
         isOpen={isOpen}

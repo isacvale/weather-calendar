@@ -9,11 +9,6 @@ const CalendarDay = observer(props => {
   const { reminders } = mainStore.data
   const data = reminders[year]?.[month]?.[day] || []
 
-  console.log('111',reminders )
-  console.log('222',reminders[year] )
-  console.log('333',reminders[year]?.[month] )
-  console.log('444',reminders[year]?.[month]?.[day] )
-
   return (
     <section
       className='CalendarDay'

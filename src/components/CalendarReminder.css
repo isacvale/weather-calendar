@@ -12,8 +12,13 @@
 }
 
 .CalendarReminder__Edit-Button {
-    color: var(--maximum-blue-purple);
+    color: var(--black-transparent-L);
+    display: inline-block;
     font-size: 0.9rem;
+    margin-top: 0.2rem;
+    padding: 0;
+    text-align: left;
+    width: 100%;
 }
 
 .CalendarReminder__Time,

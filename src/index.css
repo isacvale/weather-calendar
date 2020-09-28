@@ -63,3 +63,15 @@ code {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.big-button {
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding: 0.6rem;
+  width: 100%;
+  border-radius: 2rem;
+  border: 2px solid var(--shadow);
+  font-variation-settings: 'wght' 450;
+  text-transform: lowercase;
+}

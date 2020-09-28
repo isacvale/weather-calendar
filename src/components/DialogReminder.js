@@ -3,13 +3,14 @@ import { observer } from 'mobx-react'
 import {
   colorAliasToCSSVar,
   colorPalette,
+  getTime,
+  normalString
 } from 'utils'
 import { mainStore } from 'stores'
 import './DialogReminder.css'
 
 const DialogReminder = observer(props => {
   const { closeCallback, year, month, day, id } = props
-
 
   const reminder = mainStore.data.reminders[year][month][day]
     .find(x => x.id === id)
@@ -23,24 +24,7 @@ const DialogReminder = observer(props => {
     >
       <div className='DialogReminder__Form'>
 
-        <DateTime reminder={reminder} />
-
-        {/* <div className='DialogReminder__WeekDay'>{weekDayStr}</div>
-        <div className='DialogReminder__Date'>{dateStr}</div>
-        <div className='DialogReminder__Time'>3:00 PM</div>
-        { isEditingTime
-          ? <input
-              className='DialogReminder__Time-Edit'
-              type='datetime-local'
-            />
-          : <button
-              className='DialogReminder__Date-Button link-button'
-              onClick={() => setIsEditingTime(true)}
-            >
-              change date
-            </button>
-        } */}
-        
+        <DateTime reminder={reminder} />        
 
         <label className='DialogReminder__Message'>
           <div className='__Label'>
@@ -90,7 +74,11 @@ const DialogReminder = observer(props => {
 
 const DateTime = observer(props => {
   const { reminder } = props
-  const { year, month, day } = reminder
+  const dateFromString = new Date(reminder.dateString)
+
+  const year = dateFromString.getFullYear() || reminder.year
+  const month = dateFromString.getMonth() || reminder.month
+  const day = dateFromString.getDate() || reminder.day
 
   const [isEditingTime, setIsEditingTime] = useState(false)
 
@@ -98,6 +86,8 @@ const DateTime = observer(props => {
 
   const weekDayStr = date.toLocaleDateString('en-us', { weekday: 'long' })
   const dateStr = date.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })
+
+  const dateValue = normalString(reminder.newDateTime || reminder.dateString)
 
   return isEditingTime
     ? (
@@ -108,9 +98,9 @@ const DateTime = observer(props => {
         <input
           className='DialogReminder__Time-Edit'
           type='datetime-local'
+          value={dateValue}
           onChange={ev => {
-            const date = new Date(ev.target.value)
-            reminder.newDateTime=date
+            reminder.newDateTime=ev.target.value
           }}
         />
       </>
@@ -119,7 +109,7 @@ const DateTime = observer(props => {
       <>
         <div className='DialogReminder__WeekDay'>{weekDayStr}</div>
         <div className='DialogReminder__Date'>{dateStr}</div>
-        <div className='DialogReminder__Time'>3:00 PM</div>
+        <div className='DialogReminder__Time'>{getTime(new Date(reminder.dateString))}</div>
         <button
           className='DialogReminder__Date-Button link-button'
           onClick={() => setIsEditingTime(true)}

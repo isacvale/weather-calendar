@@ -75,12 +75,40 @@ const colorPalette = {
 const colorAliasToCSSVar = alias =>
   colorPalette[alias]
 
+const normalString = dateArg => {
+  const addLeadingZero = num => {
+    return ('00' + num).slice(-2)
+  }
+    
+  
+  const date = typeof dateArg === 'string'
+    ? new Date(dateArg)
+    : dateArg
+
+  const year = date.getFullYear()
+  const month = addLeadingZero(date.getMonth() + 1)
+  const day = addLeadingZero(date.getDate())
+  const hours = addLeadingZero(date.getHours())
+  const minutes = addLeadingZero(date.getMinutes())
+
+  return `${year}-${month}-${day}T${hours}:${minutes}`
+}
+
+const getTime = dateArg => {
+  const time = typeof dateArg === 'string'
+    ? dateArg
+    : dateArg.toLocaleTimeString()
+  return `${time.match(/\d+:\d{2}/)} ${time.match(/[A-Z]{2}/)}`
+}
+
 export {
   colorAliasToCSSVar,
   colorPalette,
   daysInMonth,
   extendDaysList,
+  getTime,
   getWeekDay,
   listDays,
+  normalString,
   range
 }
