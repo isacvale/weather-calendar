@@ -6,7 +6,7 @@ import {
   getTime,
   normalString
 } from 'utils'
-import { mainStore } from 'stores'
+import { mainStore, weatherStore } from 'stores'
 import './DialogReminder.css'
 
 const DialogReminder = observer(props => {
@@ -14,6 +14,10 @@ const DialogReminder = observer(props => {
 
   const reminder = mainStore.data.reminders[year][month][day]
     .find(x => x.id === id)
+
+  const time = getTime(new Date(reminder.dateString))
+  const weatherTime = weatherStore.formatTime(year, month, day, time.match(/(\d+):/)[1])
+  const weatherLabel = weatherStore.data?.[reminder.city]?.[weatherTime]
 
   return (
     <section
@@ -38,7 +42,7 @@ const DialogReminder = observer(props => {
               reminder.text = ev.target.value
             }}
           />
-          <div className='DialogReminder__Letter-Count'>12/30 characters used</div>
+          <div className='DialogReminder__Letter-Count'>{reminder.text.length}/30 characters used</div>
         </label>
 
         <label className='DialogReminder__City'>
@@ -53,8 +57,13 @@ const DialogReminder = observer(props => {
           />
         </label>
 
-        <div className='DialogReminder_Weather'>Weather: Rainy</div>
-        <div className='DialogReminder_Weather-Subheading'>(weather data from <a>OpenWeather</a>)</div>
+        { weatherLabel
+            ? <>
+              <div className='DialogReminder_Weather'>Weather: {weatherLabel}</div>
+              <div className='DialogReminder_Weather-Subheading'>(weather data from <a href='https://https://openweathermap.org'>OpenWeather</a>)</div>
+            </>
+            : null
+        }
 
         <div className='DialogReminder_Color-Picker-Label __Label'>Color</div>
         <ColorPicker reminder={reminder} />
@@ -117,20 +126,6 @@ const DateTime = observer(props => {
         </button>
       </>
     )
-  // return (
-  //   <div>
-      
-  //     { isEditingTime
-  //       ? 
-  //       : <button
-  //           className='DialogReminder__Date-Button link-button'
-  //           onClick={() => setIsEditingTime(true)}
-  //         >
-  //           change date
-  //         </button>
-  //     }
-  //   </div>
-  // )
 })
 
 const ColorPicker = observer(props => {

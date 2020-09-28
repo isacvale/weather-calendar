@@ -2,6 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import { mainStore } from 'stores'
 import { CalendarReminder } from 'components'
+import { weatherStore } from 'stores'
 import './CalendarDay.css'
 
 const CalendarDay = observer(props => {
@@ -15,19 +16,22 @@ const CalendarDay = observer(props => {
     >
       <header>{day}</header>
       <div className='CalendarDay__NotesContainer'>
-        { data.map((cur, idx) =>
-            <CalendarReminder
-              key={cur.id}
-              day={day}
-              month={month}
-              year={year}
-              id={cur.id}
-              city={cur.city}
-              text={cur.text}
-              time={cur.time}
-              color={cur.color}
-            />
-          )
+        { data.map((cur, idx) => {
+            weatherStore.fetchWeather(cur.city)
+            return (
+              <CalendarReminder
+                key={cur.id}
+                day={day}
+                month={month}
+                year={year}
+                id={cur.id}
+                city={cur.city}
+                text={cur.text}
+                time={cur.time}
+                color={cur.color}
+              />
+            )
+          })
         }
       </div>
       { data.length

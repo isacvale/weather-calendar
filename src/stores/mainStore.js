@@ -12,7 +12,7 @@ const data = {
     reminders: {
         2020: {
             8: {
-                17: [
+                29: [
                     {
                         city: 'San Francisco',
                         color: 'yellow',

@@ -10,11 +10,14 @@ import {
   getTime
 } from 'utils'
 import './CalendarReminder.css'
-import { mainStore } from 'stores/index'
+import {
+  mainStore,
+  weatherStore
+} from 'stores/index'
 
 const CalendarReminder = observer(props => {
 
-  const { city, color, day, id, month, text, time, year } = props
+  const { city, color, day, id, month, text, year } = props
 
   const [isOpen, setIsOpen] = useState(false)
   const reminder = mainStore.data.reminders[year][month][day]
@@ -35,6 +38,10 @@ const CalendarReminder = observer(props => {
     setIsOpen(!isOpen)
   }
 
+  const time = getTime(new Date(reminder.dateString))
+  const weatherTime = weatherStore.formatTime(year, month, day, time.match(/(\d+):/)[1])
+  const weatherLabel = weatherStore.data?.[city]?.[weatherTime]
+
   return (
     <section
       className={`CalendarReminder`}
@@ -44,7 +51,7 @@ const CalendarReminder = observer(props => {
     >
       <header>
         <div className='CalendarReminder__Time'>
-          {getTime(new Date(reminder.dateString))}
+          {time}
         </div>
       </header>
       <div
@@ -53,6 +60,15 @@ const CalendarReminder = observer(props => {
       <footer
         className='CalendarReminder__City'
       >{city}</footer>
+
+      { weatherLabel
+        ? <div
+          className='CalendarReminder__Weather'
+        >
+          weather: {weatherLabel}
+        </div>
+        : null
+      }
 
       <button
         className='CalendarReminder__Edit-Button link-button'

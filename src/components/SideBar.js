@@ -7,7 +7,8 @@ import {
   normalString,
 } from 'utils'
 import {
-  mainStore
+  mainStore,
+  weatherStore,
 } from 'stores'
 import './SideBar.css'
 
@@ -36,6 +37,14 @@ const SideBar = props => {
       >
         Add random example
       </button>
+
+      {/* <button
+        onClick={() => weatherStore.fetchWeather('London')}
+      >fetch weather</button>
+
+      <button
+        onClick={() => weatherStore.debouncedFetchWeather('London')}
+      >debounced fetch weather</button> */}
 
       { reminder
         ? <Modal

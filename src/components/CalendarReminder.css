@@ -22,10 +22,17 @@
 }
 
 .CalendarReminder__Time,
-.CalendarReminder__City,
-.CalendarReminder__Weather {
+.CalendarReminder__City {
     color: var(--color-lightgray);
-    font-size: 13px;
+    font-size: 14px;
+}
+
+.CalendarReminder__Weather {
+    color: var(--black-transparent);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 200;
+    margin: 0.2em 0;
 }
 
 .CalendarReminder__Time {
