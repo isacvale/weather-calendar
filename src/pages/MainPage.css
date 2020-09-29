@@ -1,11 +1,39 @@
 .MainPage {
     display: grid;
     grid-template-areas:
-        'header nav'
-        'bar calendar';
-    grid-template-rows: 4em auto;
-    grid-template-columns: 15em auto;
+        'header'
+        'nav'
+        'calendar'
+        'bar';
+    grid-template-rows: 3em 3em auto 8em;
+    grid-template-columns: 1fr;
     min-height: 100vh;
+    position: relative;
+}
+
+@media (min-width: 800px) {
+    .MainPage {
+        grid-template-areas:
+            'header nav'
+            'calendar calendar'
+            'bar bar';
+            grid-template-rows: 4em auto 8em;
+            grid-template-columns: 14em auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .MainPage {
+        grid-template-areas:
+            'header nav'
+            'bar calendar';
+            grid-template-rows: 4em auto;
+            grid-template-columns: 15em auto;
+    }
+}
+
+.MainPage__CalendarContainer {
+    overflow-x: auto;
 }
 
 .MainPage__CalendarContainer > * {

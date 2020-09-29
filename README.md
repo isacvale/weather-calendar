@@ -32,7 +32,11 @@ yarn build && cd build && npx lite-server
 - [+] Handles multiple reminders in a single day.
 - [+] User can delete individual notes or all notes in a day.
 
+### Extras
+- [+] user can add random notes on one click, for ease of testing.
+
 ### To do
+- [] Bug. Time shows as null when not selected.
 - [] Page must be response.
 - [] Delete operations should have a confirmation message.
 - [] Weekends should have a slightly diffent background.
