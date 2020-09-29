@@ -5,6 +5,11 @@
     padding: 0.4em;
 }
 
+.CalendarDay > header {
+    align-items: center;
+    display: flex;
+}
+
 .CalendarDay.--weekEnd {
     background: none;
     box-sizing: border-box;
@@ -15,4 +20,18 @@
     display: flex;
     flex-direction: column;
     gap: 0.4em;
+}
+
+.CalendarDay_DayLetter {
+    margin-left: 0.4em;
+    font-variation-settings: 'wght' 250;
+    color: var(--black-transparent-L);
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+@media (min-width: 800px), (min-aspect-ratio: 4/3) {
+    .CalendarDay_DayLetter {
+        display: none;
+    }
 }

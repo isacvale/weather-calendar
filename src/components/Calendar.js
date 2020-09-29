@@ -47,7 +47,7 @@ const CalendarHeader = props => {
   return (
     <>
       { daysOfTheWeek.map(day =>
-        <div key={day} className='CalendarHeader__WeekDayLabel'>{day}</div>
+        <div key={day} className='CalendarHeader__WeekDayLabel ommitable'>{day}</div>
       )}
     </>
   )

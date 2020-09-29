@@ -5,11 +5,27 @@
 }
 
 .Calendar__daysContainer {
-    display: grid;
+    display: flex;
     gap: 0.2em;
-    grid-template-columns: repeat(7, 1fr);
     padding: 0.2em;
     position: relative;
+    flex-direction: column;
+}
+
+@media (max-width: 799px) and (max-aspect-ratio: 4/3) {
+    .ommitable {
+        display: none;
+    }
+}
+
+@media (min-width: 800px), (min-aspect-ratio: 4/3) {
+    .Calendar__daysContainer {
+        display: grid;
+        gap: 0.2em;
+        grid-template-columns: repeat(7, 1fr);
+        padding: 0.2em;
+        position: relative;
+    }
 }
 
 .CalendarHeader__Label,

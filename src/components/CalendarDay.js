@@ -24,6 +24,8 @@ const CalendarDay = observer(props => {
 
   const isWeekEnd = weekDay === 0 || weekDay === 6
 
+  const dateObj = new Date(year, month, day)
+  const dayLetter = dateObj.toLocaleDateString('en-us', { weekday: 'long' })
 
   // New Reminders
   const [isNewReminderOpen, setIsNewReminderOpen] = useState(false)
@@ -47,9 +49,13 @@ const CalendarDay = observer(props => {
     setIsNewReminderOpen(!isNewReminderOpen)
   }
 
+  let sectionClasses = 'CalendarDay'
+  if (isWeekEnd) sectionClasses += ' --weekEnd'
+  if (month !== mainStore.data.selectedMonth) sectionClasses += ' ommitable'
+
   return (
     <section
-      className={`CalendarDay ${isWeekEnd ? '--weekEnd' : ''}`}
+      className={sectionClasses}
       onClick={ev => {
         if (ev.target.classList.contains('CalendarDay')) {
           createNewReminder()
@@ -59,7 +65,12 @@ const CalendarDay = observer(props => {
       <header
         onClick={createNewReminder}
       >
-        <div className='CalendarDay_Number'>{day}</div>
+        <span className='CalendarDay_Number'>
+          {day}
+        </span>
+        <span className='CalendarDay_DayLetter'>
+          {dayLetter}
+        </span>
       </header>
       
       <div className='CalendarDay__NotesContainer'>
