@@ -8,6 +8,14 @@
     justify-content: center;
 }
 
+@media (min-width: 800px) {
+    .Header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+}
+
 .Header__Title {
     color: white;
     /* letter-spacing: 1px; */

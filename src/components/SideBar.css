@@ -11,8 +11,9 @@
 
 @media (min-width: 800px) {
     .SideBar {
+        height: fit-content;
         position: sticky;
-        top: 0;
+        top: 4em;
     }
 }
 
