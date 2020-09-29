@@ -34,12 +34,12 @@ yarn build && cd build && npx lite-server
 
 ### Extras
 - [+] user can add random notes on one click, for ease of testing.
+- [+] Page must be response.
+- [+] Weekends should have a slightly diffent background.
+- [+] Change app meta information, title and favicon.
 
 ### To do
 - [] Bug. Time shows as null when not selected.
-- [] Page must be response.
 - [] Delete operations should have a confirmation message.
-- [] Weekends should have a slightly diffent background.
 - [] Search by city would be improved with autocomplete, allowing fetching weather forecast by city ID, which would remove ambiguity.
 - [] Days should have a "add note" button.
-- [] Change app meta information, title and favicon.

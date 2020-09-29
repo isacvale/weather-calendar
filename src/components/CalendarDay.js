@@ -6,13 +6,15 @@ import { weatherStore } from 'stores'
 import './CalendarDay.css'
 
 const CalendarDay = observer(props => {
-  const { day = 1, month = 0, year = 2020 } = props
+  const { day = 1, month = 0, weekDay, year = 2020 } = props
   const { reminders } = mainStore.data
   const data = reminders[year]?.[month]?.[day] || []
 
+  const isWeekEnd = weekDay === 0 || weekDay === 6
+
   return (
     <section
-      className='CalendarDay'
+      className={`CalendarDay ${isWeekEnd ? '--weekEnd' : ''}`}
     >
       <header>{day}</header>
       <div className='CalendarDay__NotesContainer'>
