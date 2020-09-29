@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather calendar
+This project is the front end for a simple calendar app, where the user can set reminders containing a small text, a color, city and time. If available the app will fetch a weather forecast from Open Weather for each reminder.
 
-## Available Scripts
+Weather calendar was crated during a 5-day coding challenge. It uses [Create React App](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+## How to run this program
+This app is hosted online at [weather-calendar.netlify.app](https://weather-calendar.netlify.app), but you can run it locally with the following commands.
 
-### `yarn start`
+First, if you haven't done so, clone the app to a local folder and open the its folder:
+```
+git clone https://github.com/isacvale/weather-calendar.git
+cd weather-calendar
+```
+Then you can run the development version by running:
+```
+yarn && yarn start
+```
+Or you can run the production version:
+```
+yarn build && cd build && npx lite-server
+```
+## Challenge checklist
+- [+] User can add reminder notes containing text, city, day and time.
+- [+] The app displays reminder notes on a calender, sorted by time.
+- [+] User can assign colors to notes.
+- [+] User can edit reminder notes.
+- [+] When available, weather data is fetched and displayed for each note, taking in account the time and city.
+- [+] Unit tests for adding reminder notes are in place.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Bonus checklist
+- [+] Calendar is dynamic and can accommodate multiple months/years.
+- [+] Handles multiple reminders in a single day.
+- [+] User can delete individual notes or all notes in a day.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### To do
+- [] Page must be response.
+- [] Delete operations should have a confirmation message.
+- [] Weekends should have a slightly diffent background.
+- [] Search by city would be improved with autocomplete, allowing fetching weather forecast by city ID, which would remove ambiguity.
+- [] Days should have a "add note" button.
+- [] Change app meta information, title and favicon.
