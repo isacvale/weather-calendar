@@ -16,11 +16,3 @@
     flex-direction: column;
     gap: 0.4em;
 }
-
-.CalendarDay_Clear-Button {
-    color: var(--color-danger);
-    font-size: 14px;
-    display: block;
-    margin-top: 0.5em;
-    width: 100%;
-}

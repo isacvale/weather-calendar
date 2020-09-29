@@ -1,0 +1,36 @@
+.ConfirmDelete__Button {
+    margin-top: 0.4rem;
+}
+
+.ConfirmDelete__Main-Button {
+    display: block;
+    margin: 0.4rem auto;
+}
+
+.ConfirmDelete__Panel {
+    background: var(--shadow-A);
+    border-radius: 0.5rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    transition: all 600ms;
+}
+
+.ConfirmDelete__Panel.--open {
+    padding: 0.5rem;
+    max-height: 20rem;
+    transition: all 600ms;
+}
+
+.ConfirmDelete__Message {
+    margin-top: 0.4rem;
+}
+
+.ConfirmDelete__Button-Wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ConfirmDelete .--danger {
+    color: var(--color-danger);
+}

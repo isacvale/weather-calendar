@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { observer } from 'mobx-react'
 import {
   CalendarReminder,
+  ConfirmDelete,
   DialogReminder,
   Modal
 } from 'components'
@@ -81,10 +82,13 @@ const CalendarDay = observer(props => {
         }
       </div>
       { data.length
-        ? <button
-          className='CalendarDay_Clear-Button link-button'
+        ? <ConfirmDelete
           onClick={() => mainStore.clearDay(year, month, day)}
-        >clear</button>
+          cancelLabel='cancel'
+          confirmLabel='clear'
+          mainLabel='clear'
+          message="Clear all day?"
+        />
         : null
       }
 

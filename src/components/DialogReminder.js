@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { observer } from 'mobx-react'
 import {
+  ConfirmDelete
+} from 'components'
+import {
   colorAliasToCSSVar,
   colorPalette,
   getTime,
@@ -78,10 +81,17 @@ const DialogReminder = observer(props => {
 
       <footer>
         <DialogCloseButton onClose={closeCallback} />
-        <button
+        {/* <button
           className='DialogReminder__Delete-Button link-button'
           onClick={() => mainStore.deleteReminder(year, month, day, id)}
-        >delete</button>
+        >delete</button> */}
+        <ConfirmDelete
+          onClick={() => mainStore.deleteReminder(year, month, day, id)}
+          cancelLabel='cancel'
+          confirmLabel='delete'
+          mainLabel='delete'
+          message="Delete the remider?"
+        />
       </footer>
     </section>
   )

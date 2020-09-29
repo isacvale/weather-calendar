@@ -35,6 +35,7 @@ code {
   --grey-transparent: hsl(0, 0%, 0%, 0.4);
   --grey-transparent-L: hsl(0, 0%, 0%, 0.2);
   --shadow: hsla(0, 0%, 0%, 0.1);
+  --shadow-A: hsla(0, 0%, 0%, 0.05);
 
   --light-pink: hsla(0, 100%, 84%, 1);
   --deep-champagne: hsla(33, 100%, 82%, 1);
