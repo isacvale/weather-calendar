@@ -102,7 +102,7 @@ const normalString = dateArg => {
 const getTime = dateArg => {
   const time = typeof dateArg === 'string'
     ? dateArg
-    : dateArg.toLocaleTimeString()
+    : dateArg.toLocaleTimeString('en-us')
   return `${time.match(/\d+:\d{2}/)} ${time.match(/[A-Z]{2}/)}`
 }
 

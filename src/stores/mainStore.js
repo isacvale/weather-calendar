@@ -68,7 +68,7 @@ const store = observable({
     const year = date.getFullYear()
     const month = date.getMonth()
     const day = date.getDate()
-    const time = date.toLocaleTimeString()
+    const time = date.toLocaleTimeString('en-us')
 
     const reminders = this.data.reminders
     if (!reminders[year]) reminders[year] = {}
