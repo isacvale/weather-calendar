@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px), (min-aspect-ratio: 4/3) {
     .Header {
         position: sticky;
         top: 0;

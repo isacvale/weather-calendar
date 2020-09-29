@@ -5,19 +5,19 @@
         'nav'
         'calendar'
         'bar';
-    grid-template-rows: 3em 3em auto 8em;
+    grid-template-rows: 3em 3em auto 7em;
     grid-template-columns: 1fr;
     min-height: 100vh;
     position: relative;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px), (min-aspect-ratio: 4/3) {
     .MainPage {
         grid-template-areas:
             'header nav'
             'calendar calendar'
             'bar bar';
-            grid-template-rows: 4em auto 8em;
+            grid-template-rows: 4em auto 7em;
             grid-template-columns: 14em auto;
     }
 }
