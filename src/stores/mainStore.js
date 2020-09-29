@@ -11,15 +11,15 @@ const data = {
   selectedYear: 2020,
   reminders: {
     2020: {
-      8: {
-        29: [
+      9: {
+        2: [
           {
-            city: 'San Francisco',
+            city: 'Vancouver',
             color: 'yellow',
-            id: 'uyvxhwbxjwbxuvjb',
+            id: 'Ohana',
             text: 'Ohana means family.',
             time: '6:30 PM',
-            dateString: '2020-09-27T16:30',
+            dateString: '2020-10-02T16:30',
           },
         ]
       },

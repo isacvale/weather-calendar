@@ -37,9 +37,9 @@ yarn build && cd build && npx lite-server
 - [+] Page must be response.
 - [+] Weekends should have a slightly diffent background.
 - [+] Change app meta information, title and favicon.
+- [+] User can create a note on a day by clicking it.
 
 ### To do
 - [] Bug. Time shows as null when not selected.
 - [] Delete operations should have a confirmation message.
 - [] Search by city would be improved with autocomplete, allowing fetching weather forecast by city ID, which would remove ambiguity.
-- [] Days should have a "add note" button.

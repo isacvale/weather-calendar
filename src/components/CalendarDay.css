@@ -18,9 +18,9 @@
 }
 
 .CalendarDay_Clear-Button {
-    margin-top: 0.5em;
+    color: var(--color-danger);
     font-size: 14px;
     display: block;
+    margin-top: 0.5em;
     width: 100%;
-    color: var(--color-danger);
 }
