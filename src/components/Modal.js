@@ -11,7 +11,7 @@ const Modal = props => {
 
     const closeIfClickedOnBackground = (ev) => {
         if (ev.target.classList.contains('Modal'))
-            closeCallback()
+            closeCallback && closeCallback()
     }
 
     return (

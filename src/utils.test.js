@@ -2,7 +2,7 @@ import {
     daysInMonth,
     getWeekDay,
     listDays,
-    range
+    range,
 } from './utils'
 
 test('daysInMonth returns correct number for common months.', () => {

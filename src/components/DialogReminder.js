@@ -10,7 +10,7 @@ import { mainStore, weatherStore } from 'stores'
 import './DialogReminder.css'
 
 const DialogReminder = observer(props => {
-  const { closeCallback, year, month, day, id } = props
+  const { closeCallback, editTime, year, month, day, id } = props
 
   const reminder = mainStore.data.reminders[year][month][day]
     .find(x => x.id === id)
@@ -28,7 +28,7 @@ const DialogReminder = observer(props => {
     >
       <div className='DialogReminder__Form'>
 
-        <DateTime reminder={reminder} />        
+        <DateTime reminder={reminder} editTime={editTime} />        
 
         <label className='DialogReminder__Message'>
           <div className='__Label'>
@@ -60,7 +60,9 @@ const DialogReminder = observer(props => {
         { weatherLabel
             ? <>
               <div className='DialogReminder_Weather'>Weather: {weatherLabel}</div>
-              <div className='DialogReminder_Weather-Subheading'>(weather data from <a href='https://https://openweathermap.org'>OpenWeather</a>)</div>
+              <div className='DialogReminder_Weather-Subheading'>
+                (weather data from <a href='https://https://openweathermap.org'>OpenWeather</a>)
+              </div>
             </>
             : null
         }
@@ -81,14 +83,15 @@ const DialogReminder = observer(props => {
 })
 
 const DateTime = observer(props => {
-  const { reminder } = props
+  const { editTime, reminder } = props
+
   const dateFromString = new Date(reminder.dateString)
 
   const year = dateFromString.getFullYear() || reminder.year
   const month = dateFromString.getMonth() || reminder.month
   const day = dateFromString.getDate() || reminder.day
 
-  const [isEditingTime, setIsEditingTime] = useState(false)
+  const [isEditingTime, setIsEditingTime] = useState(editTime)
 
   const date = new Date(year, month, day)
 

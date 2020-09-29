@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { observer } from 'mobx-react'
 import {
   DialogReminder,
   Modal,
@@ -12,15 +13,28 @@ import {
 } from 'stores'
 import './SideBar.css'
 
-const SideBar = props => {
+const SideBar = observer(props => {
   const [isOpen, setIsOpen] = useState(false)
   const [reminder, setReminder] = useState({})
 
   const createNewReminder = () => {
     setReminder(mainStore.addReminder())
+    setIsOpen(true)
   }
   
   const { year, month, day, id } = reminder
+
+  const closeDialog = () => {
+    const newDate = reminder.newDateTime
+    if (newDate) {
+      mainStore.addReminder({
+        ...reminder,
+        dateString: reminder.newDateTime,
+      })
+      mainStore.deleteReminder(year, month, day, id)
+    }
+    setIsOpen(!isOpen)
+  }
 
   return (
     <aside className='SideBar'>
@@ -48,7 +62,7 @@ const SideBar = props => {
 
       { reminder
         ? <Modal
-          // closeCallback={closeDialog}
+          closeCallback={closeDialog}
           isOpen={isOpen}
         >
           <DialogReminder
@@ -56,12 +70,13 @@ const SideBar = props => {
             year={year}
             month={month}
             day={day}
+            editTime={true}
           />
         </Modal>
         : null
       }
     </aside>
   )
-}
+})
 
 export default SideBar
