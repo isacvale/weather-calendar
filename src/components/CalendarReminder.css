@@ -40,5 +40,6 @@
 }
 
 .CalendarReminder__Text {
+    word-wrap: break-word;
     margin: 0.2em 0;
 }
