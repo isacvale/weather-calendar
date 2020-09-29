@@ -39,7 +39,7 @@ yarn build && cd build && npx lite-server
 - [+] Change app meta information, title and favicon.
 - [+] User can create a note on a day by clicking it.
 - [+] Bug. Time shows as null when not selected.
+- [+] Delete operations should have a confirmation message.
 
 ### To do
-- [] Delete operations should have a confirmation message.
 - [] Search by city would be improved with autocomplete, allowing fetching weather forecast by city ID, which would remove ambiguity.
