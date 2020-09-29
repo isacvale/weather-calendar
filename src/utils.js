@@ -123,11 +123,11 @@ const closeRemindDialog = (reminder) => {
 
   // If date was changed, it changes its place in the store.
   if (reminder.newDateTime) {
+    mainStore.deleteReminder(year, month, day, id)
     mainStore.addReminder({
       ...reminder,
       dateString: reminder.newDateTime,
     })
-    mainStore.deleteReminder(year, month, day, id)
   }
 }
 
