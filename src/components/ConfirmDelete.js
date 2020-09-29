@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-import {
-  mainStore
-} from 'stores'
 import './ConfirmDelete.css'
 
 const ConfirmDelete = props => {
-  const { onClick, mainLabel, cancelLabel, confirmLabel, message } = props
+  const { mainLabel } = props
 
   const [isOpen, setIsOpen] = useState(false)
   return (
