@@ -15,6 +15,11 @@ const DialogReminder = observer(props => {
   const reminder = mainStore.data.reminders[year][month][day]
     .find(x => x.id === id)
 
+  if (!reminder) {
+    closeCallback()
+    return null
+  }
+
   const time = getTime(new Date(reminder.dateString))
   const weatherTime = weatherStore.formatTime(year, month, day, time.match(/(\d+):/)[1])
   const weatherLabel = weatherStore.data?.[reminder.city]?.[weatherTime]

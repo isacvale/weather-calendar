@@ -10,20 +10,20 @@ const data = {
   selectedMonth: 8,
   selectedYear: 2020,
   reminders: {
-    2020: {
-      9: {
-        2: [
-          {
-            city: 'Vancouver',
-            color: 'yellow',
-            id: 'Ohana',
-            text: 'Ohana means family.',
-            time: '6:30 PM',
-            dateString: '2020-10-02T16:30',
-          },
-        ]
-      },
-    }
+    // 2020: {
+    //   9: {
+    //     2: [
+    //       {
+    //         city: 'Vancouver',
+    //         color: 'yellow',
+    //         id: 'Ohana',
+    //         text: 'Ohana means family.',
+    //         time: '6:30 PM',
+    //         dateString: '2020-10-02T16:30',
+    //       },
+    //     ]
+    //   },
+    // }
   }
 }
 
