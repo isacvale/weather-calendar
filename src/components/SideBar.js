@@ -4,12 +4,8 @@ import {
   DialogReminder,
   Modal,
 } from 'components'
-import { 
-  normalString,
-} from 'utils'
 import {
   mainStore,
-  weatherStore,
 } from 'stores'
 import './SideBar.css'
 

@@ -6,7 +6,6 @@ import {
 } from 'components'
 import {
   colorAliasToCSSVar,
-  colorPalette,
   getTime
 } from 'utils'
 import './CalendarReminder.css'

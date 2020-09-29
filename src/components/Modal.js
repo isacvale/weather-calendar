@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import { DialogReminder } from 'components'
-import { uiStore } from 'stores'
+import React from 'react'
 import './Modal.css'
 
 const Modal = props => {

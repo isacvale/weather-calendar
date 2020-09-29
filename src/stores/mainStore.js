@@ -20,7 +20,6 @@ const data = {
             text: 'Ohana means family.',
             time: '6:30 PM',
             dateString: '2020-09-27T16:30',
-            // dateString: '9/17/2020, 6:30:00 PM',
           },
         ]
       },
@@ -80,6 +79,9 @@ const store = observable({
     dayArray.push({
       ...reminderTemplate,
       ...data,
+      color,
+      city,
+      text,
       dateString,
       year,
       month,
@@ -134,7 +136,6 @@ const store = observable({
 
   minusMonth () {
     const month = this.data.selectedMonth - 1
-    const year = this.data.selectedYear
     if (month < 0) {
       this.data.selectedMonth = 11
       this.data.selectedYear -= 1
@@ -144,7 +145,6 @@ const store = observable({
   },
   plusMonth () {
     const month = this.data.selectedMonth + 1
-    const year = this.data.selectedYear
     if (month > 11) {
       this.data.selectedMonth = 0
       this.data.selectedYear += 1

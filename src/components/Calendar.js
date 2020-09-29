@@ -1,10 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import {
-  daysInMonth,
-  extendDaysList,
   listDays,
-  range
 } from 'utils'
 import { mainStore } from 'stores'
 import { CalendarDay } from 'components'
