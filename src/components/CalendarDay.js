@@ -10,6 +10,7 @@ import {
   weatherStore
 } from 'stores'
 import {
+  closeRemindDialog,
   normalString,
 } from 'utils'
 import './CalendarDay.css'
@@ -41,15 +42,7 @@ const CalendarDay = observer(props => {
   }
 
   const closeNewDialog = () => {
-    const newDate = newReminder.newDateTime
-
-    if (newDate) {
-      mainStore.addReminder({
-        ...newReminder,
-        dateString: newReminder.newDateTime,
-      })
-      mainStore.deleteReminder(newYear, newMonth, newDay, newId)
-    }
+    closeRemindDialog(newReminder)
     setIsNewReminderOpen(!isNewReminderOpen)
   }
 

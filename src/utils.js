@@ -1,3 +1,7 @@
+import {
+  mainStore
+} from 'stores'
+
 // Derived from
 // https://stackoverflow.com/questions/1184334/get-number-days-in-a-specified-month-using-javascript
 const daysInMonth = (month = (new Date().getMonth()), year = (new Date().getFullYear())) =>
@@ -105,9 +109,32 @@ const getTime = dateArg => {
 const getRandomItem = arr =>
   arr[Math.floor(Math.random() * arr.length)]
 
+const closeRemindDialog = (reminder) => {
+  const { id } = reminder
+  const oldDate = new Date(reminder.dateString)
+  const year = oldDate.getFullYear()
+  const month = oldDate.getMonth()
+  const day = oldDate.getDate()
+
+  // If it is empty.
+  if (!reminder.text) {
+    mainStore.deleteReminder(year, month, day, id)
+  }
+
+  // If date was changed, it changes its place in the store.
+  if (reminder.newDateTime) {
+    mainStore.addReminder({
+      ...reminder,
+      dateString: reminder.newDateTime,
+    })
+    mainStore.deleteReminder(year, month, day, id)
+  }
+}
+
 export {
   colorAliasToCSSVar,
   colorPalette,
+  closeRemindDialog,
   daysInMonth,
   extendDaysList,
   getRandomItem,

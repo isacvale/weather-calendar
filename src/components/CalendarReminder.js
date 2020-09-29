@@ -6,6 +6,7 @@ import {
 } from 'components'
 import {
   colorAliasToCSSVar,
+  closeRemindDialog,
   getTime
 } from 'utils'
 import './CalendarReminder.css'
@@ -26,14 +27,7 @@ const CalendarReminder = observer(props => {
   const toggleIsOpen = () => setIsOpen(!isOpen)
 
   const closeDialog = () => {
-    const newDate = reminder.newDateTime
-    if (newDate) {
-      mainStore.addReminder({
-        ...reminder,
-        dateString: reminder.newDateTime,
-      })
-      mainStore.deleteReminder(year, month, day, id)
-    }
+    closeRemindDialog(reminder)
     setIsOpen(!isOpen)
   }
 

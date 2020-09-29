@@ -7,6 +7,9 @@ import {
 import {
   mainStore,
 } from 'stores'
+import {
+  closeRemindDialog
+} from 'utils'
 import './SideBar.css'
 
 const SideBar = observer(props => {
@@ -21,14 +24,7 @@ const SideBar = observer(props => {
   const { year, month, day, id } = reminder
 
   const closeDialog = () => {
-    const newDate = reminder.newDateTime
-    if (newDate) {
-      mainStore.addReminder({
-        ...reminder,
-        dateString: reminder.newDateTime,
-      })
-      mainStore.deleteReminder(year, month, day, id)
-    }
+    closeRemindDialog(reminder)
     setIsOpen(!isOpen)
   }
 
