@@ -44,14 +44,12 @@ const CalendarHeader = props => {
   const daysOfTheWeek = [
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
   ]
-  return(
-    // <div className='CalendarHeader'>
+  return (
     <>
       { daysOfTheWeek.map(day =>
         <div key={day} className='CalendarHeader__Label'>{day}</div>
       )}
     </>
-    // </div>
   )
 }
 

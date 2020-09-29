@@ -4,7 +4,6 @@ import { MainPage } from 'pages'
 function App() {
   return (
     <div className="App">
-      {/* <Modal /> */}
       <MainPage />
     </div>
   );
