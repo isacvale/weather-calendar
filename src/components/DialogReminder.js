@@ -114,6 +114,8 @@ const DateTime = observer(props => {
   const dateStr = date.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })
 
   const dateValue = normalString(reminder.newDateTime || reminder.dateString)
+  const dayValue = dateValue.slice(0,10)
+  const hourValue = dateValue.slice(11)
 
   return isEditingTime
     ? (
@@ -121,14 +123,32 @@ const DateTime = observer(props => {
         <div className='__Label'>
           Date and Time
         </div>
-        <input
+        <div className='DialogReminder__Time-Edit-Container'>
+          <input
+            className='DialogReminder__Time-Edit'
+            type='date'
+            value={dayValue}
+            onChange={ev => {
+              reminder.newDateTime=`${ev.target.value}T${hourValue}`
+            }}
+          />
+          <input
+            className='DialogReminder__Time-Edit'
+            type='time'
+            value={hourValue}
+            onChange={ev => {
+              reminder.newDateTime=`${dayValue}T${ev.target.value}`
+            }}
+          />
+        </div>
+        {/* <input
           className='DialogReminder__Time-Edit'
           type='datetime-local'
           value={dateValue}
           onChange={ev => {
             reminder.newDateTime=ev.target.value
           }}
-        />
+        /> */}
       </>
     )
     : (

@@ -42,4 +42,49 @@ yarn build && cd build && npx lite-server
 - [+] Delete operations should have a confirmation message.
 
 ### To do
+- [] Functional tests should be automated.
 - [] Search by city would be improved with autocomplete, allowing fetching weather forecast by city ID, which would remove ambiguity.
+
+## Functional tests
+In the abscence of a lab or browserstack, tests are done locally in browsers available, all of which the latest versions on Linux and Android, except from Edge, supplied by BrowserStack.
+### Steps
+- Create a new reminder (A) with the add reminder button, without adding a text.
+[Reminder A should be deleted]
+
+- Repeat the operation to create new reminder with (B) a text.
+- Changing date of the reminder B.
+- Changing time of the reminder B.
+[App should not crash]
+
+- Create a new reminder (C) by clicking on a date.
+- Edit reminder C so it is on the same day, but earlier than B.
+[C should be displayed before B]
+- Edit reminder C to change color.
+- CLick the "clear" button and confirm.
+[Both reminders should be deleted.]
+
+- Create a reminder (D) on the tomorrow square, and add a city name.
+[There should be a weather forecast.]
+
+- Create a reminder (E) on the same day.
+- Edit reminder D, click and confirm the delete.
+[Reminder D should be deleted, but not E.]
+
+- Edit reminder E, change the text for a single word with 30 characters.
+[They should wrap and not overflow the text area.]
+- Edit reminder E, delete the text, then press and confirm delete.
+[The site should not crash.]
+
+- Click "add random example" enough times so that at least 4 reminders appear on the same day.
+[They should be ordered by time.]
+
+- Add new reminders (F) and (G) on the first and last days of the month.
+[Visit the previous and last days and check if the reminders F and G are visible - assuming their days are visible.]
+
+## Detected bugs
+- [+] ALL - Clear button should take all width, because it prevent clicking to create new reminder.
+- [+] ALL - If the screen is small enough in height, the reminder dialog becomes inaccessible.
+- [+] FIREFOX - Colors in dialog take three rows.
+- [+] FIREFOX - Date/time widget doesn't work on Firefox(!).
+- [+] EDGE - Ordering of reminders is not working (B and C). It does on random messages. Couldn't reproduce.
+ - No specific bugs in Chrome, Chrome for Android, and Opera.

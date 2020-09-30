@@ -1,3 +1,8 @@
+.ConfirmDelete {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .ConfirmDelete__Button {
     margin-top: 0.4rem;
 }
