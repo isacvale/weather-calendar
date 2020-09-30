@@ -10,9 +10,12 @@ import './Calendar.css'
 const Calendar = observer(props => {
   const today = new Date()
   const {
-    month = mainStore.data.selectedMonth || today.getMonth(),
     year = mainStore.data.selectedYear || today.getFullYear()
   } = props
+
+  const month = (!mainStore.data.selectedMonth && mainStore.data.selectedMonth !== 0)
+    ? today.getMonth()
+    : mainStore.data.selectedMonth
 
   const listOfDays = listDays(month, year, true)
 
@@ -41,13 +44,15 @@ const Calendar = observer(props => {
 })
 
 const CalendarHeader = props => {
+  const { month } = props
   const daysOfTheWeek = [
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
   ]
+
   return (
     <>
       { daysOfTheWeek.map(day =>
-        <div key={day} className='CalendarHeader__WeekDayLabel ommitable'>{day}</div>
+        <div key={day} className={`CalendarHeader__WeekDayLabel ommitable`}>{day}</div>
       )}
     </>
   )

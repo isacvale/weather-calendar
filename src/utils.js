@@ -17,6 +17,7 @@ const listDays = (
   ) => {
   const daysList = range(daysInMonth(month, year))
     .map(day => ({ day, month, year, weekDay: getWeekDay(year, month, day) }))
+
   return extend
     ? extendDaysList(daysList)
     : daysList

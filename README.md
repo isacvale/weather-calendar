@@ -89,5 +89,6 @@ In the abscence of a lab or browserstack, tests are done locally in browsers ava
 - [+] FIREFOX - Date/time widget doesn't work on Firefox(!).
 - [+] EDGE - Ordering of reminders is not working (B and C). It does on random messages. Couldn't reproduce.
 - [+] ALL - Weather API returns errors when no data is found, that should be catched.
+- [+] ALL - Days in January aren't displayed at all in mobile devices.
 
  - No specific bugs in Chrome, Chrome for Android, and Opera.
