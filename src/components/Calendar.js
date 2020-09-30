@@ -44,7 +44,6 @@ const Calendar = observer(props => {
 })
 
 const CalendarHeader = props => {
-  const { month } = props
   const daysOfTheWeek = [
     'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
   ]
