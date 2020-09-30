@@ -35,3 +35,12 @@
         display: none;
     }
 }
+
+.CalendarDay__Holiday {
+    color: var(--black-transparent-L);
+    font-size: 12px;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    pointer-events: none;
+}

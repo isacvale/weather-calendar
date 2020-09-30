@@ -7,6 +7,7 @@ import {
   Modal
 } from 'components'
 import {
+  holidayStore,
   mainStore,
   weatherStore
 } from 'stores'
@@ -18,6 +19,17 @@ import './CalendarDay.css'
 
 const CalendarDay = observer(props => {
   const { day = 1, month = 0, weekDay, year = 2020 } = props
+
+  holidayStore.getHolidays(year)
+
+  const dayHolidays = holidayStore.data.viewHolidays
+    ? (holidayStore.data?.[year]?.[month] || [])
+      .filter(holiday => holiday.day === day)
+    : []
+
+  // const monthHolidays = holidayStore.data?.[year]?.[month] || []
+  // const dayHolidays = monthHolidays
+  //   .filter(holiday => holiday.day === day)
 
   const { reminders } = mainStore.data
   const data = reminders[year]?.[month]?.[day] || []
@@ -72,6 +84,18 @@ const CalendarDay = observer(props => {
           {dayLetter}
         </span>
       </header>
+
+      <div
+        style={{ pointerEvents: 'none' }}
+      >{ dayHolidays.length
+        ? dayHolidays.map((cur, idx) =>
+          <div
+            key={idx}
+            className={'CalendarDay__Holiday'}
+          >{cur.name}</div>
+        )
+        : null
+      }</div>
       
       <div className='CalendarDay__NotesContainer'>
         { data.map((cur, idx) => {

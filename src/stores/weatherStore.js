@@ -37,23 +37,39 @@ const store = observable({
   },
   async fetchWeather (cityName) {
     if (cityName && !this.data?.[cityName]) {
-      try {
-        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
-        const res = await fetch(url)
-        const data = await res.json()
-        if (data.list) {
-          const final = data.list
-            .reduce((acc, cur) => {
-              return ({
-                ...acc,
-                [cur.dt_txt]: cur.weather[0].main
-              })
-            }, {})
-          this.data[cityName] = final
-        }
-      } catch (err) {
-        console.error(err)
-      }
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.list) {
+            const final = data.list
+              .reduce((acc, cur) => {
+                return ({
+                  ...acc,
+                  [cur.dt_txt]: cur.weather[0].main
+                })
+              }, {})
+            this.data[cityName] = final
+          }
+        })
+        .catch(err => console.log(err))
+
+      // try {
+      //   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`
+      //   const res = await fetch(url)
+      //   const data = await res.json()
+      //   if (data.list) {
+      //     const final = data.list
+      //       .reduce((acc, cur) => {
+      //         return ({
+      //           ...acc,
+      //           [cur.dt_txt]: cur.weather[0].main
+      //         })
+      //       }, {})
+      //     this.data[cityName] = final
+      //   }
+      // } catch (err) {
+      //   console.error(err)
+      // }
     }
   },
   async debouncedFetchWeather (city) {

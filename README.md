@@ -40,6 +40,7 @@ yarn build && cd build && npx lite-server
 - [+] User can create a note on a day by clicking it.
 - [+] Bug. Time shows as null when not selected.
 - [+] Delete operations should have a confirmation message.
+- [+] Adds holidays from Calendarific API.
 
 ### To do
 - [] Functional tests should be automated.
@@ -87,4 +88,6 @@ In the abscence of a lab or browserstack, tests are done locally in browsers ava
 - [+] FIREFOX - Colors in dialog take three rows.
 - [+] FIREFOX - Date/time widget doesn't work on Firefox(!).
 - [+] EDGE - Ordering of reminders is not working (B and C). It does on random messages. Couldn't reproduce.
+- [+] ALL - Weather API returns errors when no data is found, that should be catched.
+
  - No specific bugs in Chrome, Chrome for Android, and Opera.
