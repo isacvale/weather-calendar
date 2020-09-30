@@ -81,3 +81,24 @@ code {
   font-variation-settings: 'wght' 450;
   text-transform: lowercase;
 }
+
+input,
+textarea,
+button {
+  transition: box-shadow 400ms;
+  box-shadow: 0 0 0 0 hsla(0, 0%, 0%, 0);
+}
+
+input:hover,
+textarea:hover,
+button:hover {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--black-transparent-LL);  
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--black-transparent-LL);
+}
