@@ -24,8 +24,9 @@
 }
 
 .Navigation__MainTitle {
-    text-align: center;
     flex-basis: 16em;
     font-size: 1.4em;
     font-variation-settings: 'wght' 600;
+    line-height: 100%;
+    text-align: center;
 }
