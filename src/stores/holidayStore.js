@@ -39,15 +39,6 @@ const store = observable({
                 return acc
             }, {})
         this.data[year] = holidays
-
-        console.log(resJSON.response.holidays)
-        console.log(resJSON.response.holidays.length)
-        console.log('vs')
-        console.log(resJSON.response.holidays
-            .filter(holiday =>
-                !holiday.type.find(x => ignore.includes(x))
-            ).length
-        )
     }
 }, {
     getHolidays: action.bound
