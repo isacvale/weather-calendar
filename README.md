@@ -3,6 +3,13 @@ This project is the front end for a simple calendar app, where the user can set 
 
 Weather calendar was crated during a 5-day coding challenge. It uses [Create React App](https://github.com/facebook/create-react-app).
 
+## The Challenge
+The challenge asked for the front-end for a calendar that allowed users to add and edit notes. It specifically asked for no back-end.
+
+### Bugs fixed after challenge was submitted
+- [+] ALL - Days in January aren't displayed at all in mobile devices.
+- [+] ALL - Calendar opens on September 2020 instead of the current year.
+
 ## How to run this program
 This app is hosted online at [weather-calendar.netlify.app](https://weather-calendar.netlify.app), but you can run it locally with the following commands.
 
@@ -89,6 +96,5 @@ In the abscence of a lab or browserstack, tests are done locally in browsers ava
 - [+] FIREFOX - Date/time widget doesn't work on Firefox(!).
 - [+] EDGE - Ordering of reminders is not working (B and C). It does on random messages. Couldn't reproduce.
 - [+] ALL - Weather API returns errors when no data is found, that should be catched.
-- [+] ALL - Days in January aren't displayed at all in mobile devices.
 
  - No specific bugs in Chrome, Chrome for Android, and Opera.

@@ -7,8 +7,8 @@ import {
 
 // Data structure
 const data = {
-  selectedMonth: 8,
-  selectedYear: 2020,
+  selectedMonth: new Date().getMonth(),
+  selectedYear: new Date().getFullYear(),
   reminders: {
     // 2020: {
     //   9: {
